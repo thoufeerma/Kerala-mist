@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const packages = [
   {
-    image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=1000&auto=format&fit=crop',
+    image: '/assets/packages/munnar.png',
     title: 'Munnar Hills',
     duration: '3 Days / 2 Nights',
     description: 'Experience the misty tea gardens, serene waterfalls, and breathtaking viewpoints in the Kashmir of South India.',
@@ -15,21 +15,21 @@ const packages = [
     color: 'bg-green-500/20'
   },
   {
-    image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=1000&auto=format&fit=crop',
+    image: '/assets/packages/alleppey.png',
     title: 'Alleppey Houseboat',
     duration: '2 Days / 1 Night',
     description: 'Cruise through the calm emerald backwaters in a traditional premium houseboat and enjoy authentic Kerala cuisine.',
     color: 'bg-blue-500/20'
   },
   {
-    image: 'https://images.unsplash.com/photo-1506744626753-14016f502226?q=80&w=1000&auto=format&fit=crop',
+    image: '/assets/packages/wayanad.png',
     title: 'Wayanad Wilds',
     duration: '4 Days / 3 Nights',
     description: 'Dive into lush forests, ancient caves, serene lakes, and high-altitude mountain passes.',
     color: 'bg-amber-500/20'
   },
   {
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1000&auto=format&fit=crop',
+    image: '/assets/packages/kochi.png',
     title: 'Kochi Heritage',
     duration: '2 Days / 1 Night',
     description: 'Discover the historical trails, colonial architecture, and iconic Chinese fishing nets.',

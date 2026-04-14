@@ -30,7 +30,7 @@ export default function Navbar() {
     <motion.header
       className={cn(
         'fixed top-0 left-0 w-full z-50 transition-all duration-300',
-        scrolled ? 'glass py-3 shadow-lg' : 'bg-transparent py-5'
+        scrolled ? 'bg-slate-900/90 backdrop-blur-xl py-4 shadow-xl border-b border-white/5' : 'bg-transparent py-5'
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -42,7 +42,7 @@ export default function Navbar() {
           <Leaf className="w-8 h-8 text-brand-500 transition-transform group-hover:scale-110" />
           <span className={cn(
             "font-bold text-xl tracking-tight transition-colors",
-            scrolled ? "text-brand-950 dark:text-white" : "text-white"
+            "text-white"
           )}>
             Kerala Mist
           </span>
@@ -55,8 +55,8 @@ export default function Navbar() {
               key={link.name} 
               href={link.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-brand-500",
-                scrolled ? "text-slate-600 dark:text-slate-300" : "text-slate-100"
+                "text-sm font-medium transition-colors hover:text-brand-400",
+                scrolled ? "text-slate-200" : "text-slate-100"
               )}
             >
               {link.name}
@@ -68,7 +68,7 @@ export default function Navbar() {
             whileTap={{ scale: 0.95 }}
             className={cn(
               "px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-xl",
-              scrolled ? "bg-brand-600 text-white hover:bg-brand-700" : "bg-white text-brand-800 hover:bg-slate-50"
+              scrolled ? "bg-brand-500 text-white hover:bg-brand-400" : "bg-white text-brand-800 hover:bg-slate-50"
             )}
           >
             Plan Trip
@@ -80,7 +80,7 @@ export default function Navbar() {
           className="md:hidden p-2"
           onClick={() => setMobileMenuOpen(true)}
         >
-          <Menu className={cn("w-6 h-6", scrolled ? "text-slate-800 dark:text-white" : "text-white")} />
+          <Menu className={cn("w-6 h-6", "text-white")} />
         </button>
       </div>
 

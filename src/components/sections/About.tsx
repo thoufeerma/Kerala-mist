@@ -114,9 +114,10 @@ export default function About() {
                     visible: { opacity: 1, x: 0 }
                   }}
                   whileHover={{ scale: 1.02 }}
-                  className="flex items-center gap-4 font-semibold text-slate-800 bg-white p-5 rounded-2xl shadow-[0_10px_20px_-10px_rgba(0,0,0,0.05)] border border-slate-100/50 transition-transform cursor-default"
+                  className="flex items-center gap-4 font-semibold text-slate-800 bg-white/50 backdrop-blur-xl p-5 rounded-2xl shadow-sm border border-white/60 transition-transform cursor-default relative overflow-hidden"
                 >
-                  <div className="bg-brand-50 p-2.5 rounded-xl shadow-inner border border-brand-100">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+                  <div className="bg-brand-50/80 backdrop-blur-sm p-2.5 rounded-xl shadow-inner border border-brand-100 relative z-10">
                      <CheckCircle2 className="w-6 h-6 text-brand-600 shrink-0 drop-shadow-sm" />
                   </div>
                   <span className="text-[17px] tracking-tight">{point}</span>
