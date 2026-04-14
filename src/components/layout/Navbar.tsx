@@ -1,0 +1,127 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, Leaf } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import Link from 'next/link';
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: 'Home', href: '#home' },
+    { name: 'Features', href: '#features' },
+    { name: 'Services', href: '#services' },
+    { name: 'Pricing', href: '#pricing' },
+    { name: 'Contact', href: '#contact' },
+  ];
+
+  return (
+    <motion.header
+      className={cn(
+        'fixed top-0 left-0 w-full z-50 transition-all duration-300',
+        scrolled ? 'glass py-3 shadow-lg' : 'bg-transparent py-5'
+      )}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+    >
+      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2 group">
+          <Leaf className="w-8 h-8 text-brand-500 transition-transform group-hover:scale-110" />
+          <span className={cn(
+            "font-bold text-xl tracking-tight transition-colors",
+            scrolled ? "text-brand-950 dark:text-white" : "text-white"
+          )}>
+            Kerala Mist
+          </span>
+        </Link>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <Link 
+              key={link.name} 
+              href={link.href}
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-brand-500",
+                scrolled ? "text-slate-600 dark:text-slate-300" : "text-slate-100"
+              )}
+            >
+              {link.name}
+            </Link>
+          ))}
+          <motion.a 
+            href="#contact"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={cn(
+              "px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-xl",
+              scrolled ? "bg-brand-600 text-white hover:bg-brand-700" : "bg-white text-brand-800 hover:bg-slate-50"
+            )}
+          >
+            Plan Trip
+          </motion.a>
+        </nav>
+
+        {/* Mobile Toggle */}
+        <button 
+          className="md:hidden p-2"
+          onClick={() => setMobileMenuOpen(true)}
+        >
+          <Menu className={cn("w-6 h-6", scrolled ? "text-slate-800 dark:text-white" : "text-white")} />
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'tween', duration: 0.3 }}
+            className="fixed inset-0 z-50 bg-white dark:bg-slate-950 flex flex-col pt-24 px-8 pb-8"
+          >
+            <button 
+              className="absolute top-6 right-6 p-2 text-slate-800 dark:text-white"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <div className="flex flex-col gap-8 text-center text-xl font-medium">
+              {navLinks.map((link) => (
+                <Link 
+                  key={link.name} 
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-slate-800 dark:text-slate-200 hover:text-brand-600"
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <Link 
+                href="#contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="mt-4 bg-brand-600 text-white px-8 py-4 rounded-full text-lg shadow-lg"
+              >
+                Plan Your Trip
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
+  );
+}

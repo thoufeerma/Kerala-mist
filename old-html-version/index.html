@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kerala Mist Holidays - Customized and premium travel experiences across God's Own Country.">
+    <title>Kerala Mist Holidays — Explore Kerala Like Never Before</title>
+    
+    <!-- Google Fonts: Montserrat for consistent premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons for modern minimalist icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- CSS link -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Sticky Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon"><i class="ph-fill ph-leaf"></i></span>
+                <span class="logo-text">Kerala Mist</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#packages" class="nav-link">Packages</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#contact" class="nav-link btn-primary-sm">Plan Your Trip</a>
+            </nav>
+
+            <!-- Mobile menu trigger -->
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-nav">
+        <button class="close-menu" id="close-menu" aria-label="Close Menu">
+            <i class="ph ph-x"></i>
+        </button>
+        <div class="mobile-nav-links">
+            <a href="#home" class="mobile-link">Home</a>
+            <a href="#packages" class="mobile-link">Packages</a>
+            <a href="#about" class="mobile-link">About Us</a>
+            <a href="#contact" class="mobile-link btn-secondary">Contact Us</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Home / Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg">
+                <!-- Using an Unsplash backwaters image -->
+                <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2000&auto=format&fit=crop" alt="Kerala Backwaters Background" class="hero-img">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container hero-content">
+                <h1 class="hero-title animate-slide-up">Explore Kerala<br>Like Never Before</h1>
+                <p class="hero-subtitle animate-fade-in delay-1">Customized, premium travel experiences across God’s Own Country.</p>
+                <div class="hero-cta animate-slide-up delay-2">
+                    <a href="#packages" class="btn btn-primary btn-glow">Discover Packages</a>
+                    <a href="#about" class="btn btn-outline">Why Choose Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card animate-up">
+                        <div class="feature-icon"><i class="ph-fill ph-check-circle"></i></div>
+                        <h3>Trusted Service</h3>
+                        <p>Years of authentic, highly-rated experiences.</p>
+                    </div>
+                    <div class="feature-card animate-up delay-1">
+                        <div class="feature-icon"><i class="ph-fill ph-map-pin-line"></i></div>
+                        <h3>Local Expertise</h3>
+                        <p>We know the hidden gems of God's Own Country.</p>
+                    </div>
+                    <div class="feature-card animate-up delay-2">
+                        <div class="feature-icon"><i class="ph-fill ph-users"></i></div>
+                        <h3>Personalized Trips</h3>
+                        <p>Custom itineraries tailored to your needs.</p>
+                    </div>
+                    <div class="feature-card animate-up delay-3">
+                        <div class="feature-icon"><i class="ph-fill ph-wallet"></i></div>
+                        <h3>Affordable Luxury</h3>
+                        <p>Premium experiences without the premium price tag.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packages Section -->
+        <section id="packages" class="packages section-padding">
+            <div class="container">
+                <div class="section-header center animate-up">
+                    <span class="subheading">Our Destinations</span>
+                    <h2>Exclusive Tour Packages</h2>
+                    <p>Handpicked experiences designed to show you the true beauty of Kerala.</p>
+                </div>
+                
+                <div class="packages-grid">
+                    <!-- Package 1 -->
+                    <div class="package-card animate-up">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=1000&auto=format&fit=crop" alt="Munnar Tea Gardens" class="card-img">
+                            <div class="card-badge">Best Seller</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="ph ph-clock"></i> 3 Days / 2 Nights</span>
+                            </div>
+                            <h3>Munnar Hills</h3>
+                            <p>Experience the misty tea gardens, serene waterfalls, and breathtaking viewpoints in the Kashmir of South India.</p>
+                            <div class="card-footer">
+                                <a href="#contact" class="btn btn-outline-sm">Get Pricing</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 2 -->
+                    <div class="package-card animate-up delay-1">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=1000&auto=format&fit=crop" alt="Alleppey Houseboat" class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="ph ph-clock"></i> 2 Days / 1 Night</span>
+                            </div>
+                            <h3>Alleppey Houseboat</h3>
+                            <p>Cruise through the calm emerald backwaters in a traditional premium houseboat and enjoy authentic Kerala cuisine.</p>
+                            <div class="card-footer">
+                                <a href="#contact" class="btn btn-outline-sm">Get Pricing</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 3 -->
+                    <div class="package-card animate-up delay-2">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1506461883276-594635100049?q=80&w=1000&auto=format&fit=crop" alt="Wayanad Wild" class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="ph ph-clock"></i> 4 Days / 3 Nights</span>
+                            </div>
+                            <h3>Wayanad Wilds</h3>
+                            <p>Dive into lush forests, ancient caves, serene lakes, and high-altitude mountain passes.</p>
+                            <div class="card-footer">
+                                <a href="#contact" class="btn btn-outline-sm">Get Pricing</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 4 -->
+                    <div class="package-card animate-up delay-3">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1000&auto=format&fit=crop" alt="Kochi Heritage" class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span><i class="ph ph-clock"></i> 2 Days / 1 Night</span>
+                            </div>
+                            <h3>Kochi Heritage</h3>
+                            <p>Discover the historical trails, colonial architecture, and iconic Chinese fishing nets.</p>
+                            <div class="card-footer">
+                                <a href="#contact" class="btn btn-outline-sm">Get Pricing</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials section-padding bg-light">
+            <div class="container">
+                <div class="section-header center animate-up">
+                    <span class="subheading">Reviews</span>
+                    <h2>What Our Guests Say</h2>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card animate-up">
+                        <div class="stars">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="review">"Absolutely magical! The Alleppey houseboat experience was straight out of a dream. Perfect arrangements, highly recommended!"</p>
+                        <div class="guest">
+                            <div class="avatar"><img src="https://i.pravatar.cc/100?img=1" alt="Sarah J."></div>
+                            <div class="info">
+                                <h4>Sarah Jane</h4>
+                                <span>London, UK</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card animate-up delay-1">
+                        <div class="stars">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="review">"Everything from our pick up at Kochi airport to the Munnar stay was flawlessly managed by the local team. Incredible hospitality!"</p>
+                        <div class="guest">
+                            <div class="avatar"><img src="https://i.pravatar.cc/100?img=11" alt="Rahul M."></div>
+                            <div class="info">
+                                <h4>Rahul M.</h4>
+                                <span>Mumbai, India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us -->
+        <section id="about" class="about section-padding">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content animate-up">
+                        <span class="subheading">About Us</span>
+                        <h2>Passionate About Sharing The Magic of Kerala</h2>
+                        <p>At Kerala Mist Holidays, our mission is simple: to offer deeply personalized, high-quality, and authentic travel experiences across Kerala.</p>
+                        <p>Born out of a profound love for our homeland, our team possesses unmatched local expertise. We design custom itineraries that let you explore God’s Own Country at your own pace—whether you seek a peaceful retreat in the backwaters, a misty awakening in the hills, or a vibrant coastal adventure.</p>
+                        <ul class="about-list">
+                            <li><i class="ph-fill ph-check-circle"></i> Handpicked local stays and resorts</li>
+                            <li><i class="ph-fill ph-check-circle"></i> 24/7 support during your journey</li>
+                            <li><i class="ph-fill ph-check-circle"></i> Eco-friendly travel options</li>
+                        </ul>
+                    </div>
+                    <div class="about-images animate-up delay-1">
+                        <div class="img-large">
+                            <img src="https://images.unsplash.com/photo-1620766182966-c6eb5ed2b788?q=80&w=800&auto=format&fit=crop" alt="Kerala Tradition">
+                        </div>
+                        <div class="img-small floating">
+                            <img src="https://images.unsplash.com/photo-1514222026194-22b64d39fb99?q=80&w=500&auto=format&fit=crop" alt="Kerala Landscape">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section-padding bg-green-light">
+            <div class="container">
+                <div class="contact-wrapper glass-panel animate-up">
+                    <div class="contact-info">
+                        <h2>Ready to start planning?</h2>
+                        <p>Reach out to us to get a personalized quote or ask any questions.</p>
+                        
+                        <div class="info-items">
+                            <div class="info-item">
+                                <div class="icon"><i class="ph-fill ph-envelope-simple"></i></div>
+                                <div>
+                                    <h4>Email Us</h4>
+                                    <a href="mailto:keralamistholidays@gmail.com">keralamistholidays@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="icon"><i class="ph-fill ph-phone"></i></div>
+                                <div>
+                                    <h4>Call Us</h4>
+                                    <a href="tel:+919847006294">+91 98470 06294</a><br>
+                                    <a href="tel:+919847006295">+91 98470 06295</a>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="icon"><i class="ph-fill ph-instagram-logo"></i></div>
+                                <div>
+                                    <h4>Instagram</h4>
+                                    <a href="https://instagram.com/keralamist_holidays" target="_blank">@keralamist_holidays</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <form id="enquiry-form">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+1 234 567 890">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message / Preferences</label>
+                                <textarea id="message" name="message" rows="4" required placeholder="Tell us about your dream trip..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Send Enquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col brand">
+                <h3><i class="ph-fill ph-leaf"></i> Kerala Mist</h3>
+                <p>Bringing the finest, most authentic experiences of God's Own Country directly to you. Premium, customized, unforgettable.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="ph-fill ph-facebook-logo"></i></a>
+                    <a href="https://instagram.com/keralamist_holidays" aria-label="Instagram"><i class="ph-fill ph-instagram-logo"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="ph-fill ph-twitter-logo"></i></a>
+                </div>
+            </div>
+            <div class="footer-col links">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#packages">Destinations</a>
+                <a href="#about">About Company</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-col links">
+                <h4>Legal</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cancellation Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Kerala Mist Holidays. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919847006294" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="ph-fill ph-whatsapp-logo"></i>
+    </a>
+
+    <!-- JS linked -->
+    <script src="js/main.js"></script>
+</body>
+</html>
