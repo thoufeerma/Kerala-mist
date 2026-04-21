@@ -70,7 +70,7 @@ export default function Testimonials() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {testimonials.map((test, idx) => (
             <motion.div
               key={idx}
@@ -79,20 +79,20 @@ export default function Testimonials() {
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.6, delay: idx * 0.15, ease: 'easeOut' }}
               whileHover={{ y: -6, transition: { duration: 0.3 } }}
-              className="bg-white p-8 rounded-[2rem] shadow-[0_4px_20px_rgb(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgb(0,0,0,0.1)] transition-all duration-500 border border-slate-100 relative"
+              className="group bg-white p-8 rounded-[2rem] shadow-[0_4px_20px_rgb(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgb(0,0,0,0.1)] transition-all duration-500 border border-slate-100 relative flex flex-col h-full"
             >
               <div className="flex gap-1 mb-6 text-accent-400">
                 {[...Array(test.rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 fill-current" />
                 ))}
               </div>
-              <p className="text-slate-600 text-lg font-medium leading-relaxed mb-8">
+              <p className="text-slate-600 text-lg font-medium leading-relaxed mb-8 flex-1">
                 &ldquo;{test.feedback}&rdquo;
               </p>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 mt-auto">
                 {/* Avatar with initials */}
                 <div
-                  className={`w-14 h-14 rounded-full bg-gradient-to-br ${test.color} flex items-center justify-center shadow-lg`}
+                  className={`w-14 h-14 rounded-full bg-gradient-to-br ${test.color} flex items-center justify-center shadow-lg shrink-0`}
                 >
                   <span className="text-white font-bold text-sm">{test.initials}</span>
                 </div>
