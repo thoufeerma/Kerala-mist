@@ -1,7 +1,22 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
+import { useTranslation } from '@/lib/i18n';
+
+const Star = ({ className }: { className?: string }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+  </svg>
+);
 
 const testimonials = [
   {
@@ -34,6 +49,8 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const { t } = useTranslation();
+  
   return (
     <section id="testimonials" className="py-24 bg-slate-50 relative overflow-hidden">
       {/* Background decoration */}
@@ -48,7 +65,7 @@ export default function Testimonials() {
             viewport={{ once: true }}
             className="inline-block text-brand-700 font-extrabold tracking-[0.2em] uppercase text-xs mb-4"
           >
-            Reviews
+            {t('reviews')}
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +74,7 @@ export default function Testimonials() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 tracking-tight"
           >
-            What Our Guests Say
+            {t('reviews')}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -90,7 +107,6 @@ export default function Testimonials() {
                 &ldquo;{test.feedback}&rdquo;
               </p>
               <div className="flex items-center gap-4 mt-auto">
-                {/* Avatar with initials */}
                 <div
                   className={`w-14 h-14 rounded-full bg-gradient-to-br ${test.color} flex items-center justify-center shadow-lg shrink-0`}
                 >
@@ -101,8 +117,6 @@ export default function Testimonials() {
                   <span className="text-slate-500 text-sm">{test.location}</span>
                 </div>
               </div>
-
-              {/* Decorative quote */}
               <div className="absolute top-6 right-6 text-brand-100 text-7xl font-serif pointer-events-none leading-none select-none">
                 &ldquo;
               </div>

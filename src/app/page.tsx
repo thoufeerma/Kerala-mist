@@ -1,19 +1,24 @@
+'use client';
+
 import Hero from '@/components/sections/Hero';
 import WhyChooseUs from '@/components/sections/Features';
 import FeaturedPackages from '@/components/sections/FeaturedPackages';
-import HowItWorks from '@/components/sections/HowItWorks';
+import PopularDestinations from '@/components/sections/PopularDestinations';
+import TrivandrumHighlight from '@/components/sections/TrivandrumHighlight';
 import Testimonials from '@/components/sections/Testimonials';
-import FinalCTA from '@/components/sections/FinalCTA';
+import ReachOut from '@/components/sections/ReachOut';
 
 export default function Home() {
   return (
     <main className="min-h-screen relative overflow-x-clip bg-slate-50">
       <Hero />
+      <PopularDestinations />
       <WhyChooseUs />
       <FeaturedPackages />
-      <HowItWorks />
+      <TrivandrumHighlight />
       <Testimonials />
-      <FinalCTA />
+      <ReachOut />
     </main>
   );
 }
+

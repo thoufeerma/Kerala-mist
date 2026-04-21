@@ -2,31 +2,34 @@
 
 import { motion, Variants } from 'framer-motion';
 import { ShieldCheck, Compass, Settings2, HeartHandshake } from 'lucide-react';
-
-const features = [
-  {
-    icon: ShieldCheck,
-    title: 'Transparent Pricing',
-    description: 'No hidden charges, no surprise fees. What you see is exactly what you pay — every rupee accounted for upfront.',
-  },
-  {
-    icon: Compass,
-    title: 'Local Guides',
-    description: 'Our guides are born-and-raised Keralites who know every hidden trail, secret viewpoint, and best-kept local gem.',
-  },
-  {
-    icon: Settings2,
-    title: 'Customizable Itineraries',
-    description: 'Every itinerary is tailor-made. Adjust duration, destinations, hotels, and pace to match your ideal vacation.',
-  },
-  {
-    icon: HeartHandshake,
-    title: '24/7 Support',
-    description: 'From your first enquiry to your last day, our team is on standby — available around the clock via WhatsApp or call.',
-  },
-];
+import { useTranslation } from '@/lib/i18n';
 
 export default function WhyChooseUs() {
+  const { t } = useTranslation();
+
+  const featuresList = [
+    {
+      icon: ShieldCheck,
+      title: t('feature_1_title'),
+      description: t('feature_1_desc'),
+    },
+    {
+      icon: Compass,
+      title: t('feature_2_title'),
+      description: t('feature_2_desc'),
+    },
+    {
+      icon: Settings2,
+      title: t('feature_3_title'),
+      description: t('feature_3_desc'),
+    },
+    {
+      icon: HeartHandshake,
+      title: t('feature_4_title'),
+      description: t('feature_4_desc'),
+    },
+  ];
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -56,7 +59,7 @@ export default function WhyChooseUs() {
             viewport={{ once: true }}
             className="inline-block text-brand-700 font-extrabold tracking-[0.2em] uppercase text-xs mb-4"
           >
-            Why Choose Us
+            {t('why_choose_us')}
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -65,7 +68,7 @@ export default function WhyChooseUs() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 tracking-tight"
           >
-            The Kerala Mist Advantage
+            {t('advantage_title')}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -74,7 +77,7 @@ export default function WhyChooseUs() {
             transition={{ delay: 0.2 }}
             className="text-slate-600 text-lg"
           >
-            We don&apos;t just book hotels — we curate unforgettable journeys focused on authentic local culture, comfort, and value.
+            {t('features_subtitle')}
           </motion.p>
         </div>
 
@@ -85,7 +88,7 @@ export default function WhyChooseUs() {
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
         >
-          {features.map((feature, idx) => (
+          {featuresList.map((feature, idx) => (
             <motion.div
               key={idx}
               variants={cardVariants}

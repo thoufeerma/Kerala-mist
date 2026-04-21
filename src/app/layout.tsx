@@ -5,6 +5,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import WhatsAppFloat from '@/components/layout/WhatsAppFloat';
 import AppShell from '@/components/layout/AppShell';
+import { LanguageProvider } from '@/lib/i18n';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -25,12 +26,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} antialiased selection:bg-brand-500 selection:text-white`}>
-        <AppShell>
-          <Navbar />
-          {children}
-          <Footer />
-          <WhatsAppFloat />
-        </AppShell>
+        <LanguageProvider>
+          <AppShell>
+            <Navbar />
+            {children}
+            <Footer />
+            <WhatsAppFloat />
+          </AppShell>
+        </LanguageProvider>
       </body>
     </html>
   );

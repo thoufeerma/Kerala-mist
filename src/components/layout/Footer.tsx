@@ -1,8 +1,13 @@
+'use client';
+
 import { Leaf, Globe, MessageCircle, Camera, MapPin, Phone, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { PHONE_NUMBERS, EMAIL, ADDRESS, getWhatsAppLink } from '@/lib/constants';
+import { useTranslation } from '@/lib/i18n';
 
 export default function Footer() {
+  const { t } = useTranslation();
+  
   return (
     <footer className="bg-slate-950 text-slate-300 py-16 border-t border-slate-800">
       <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -13,7 +18,7 @@ export default function Footer() {
             <span className="font-bold text-xl text-white tracking-tight">Kerala Mist</span>
           </Link>
           <p className="text-sm leading-relaxed text-slate-400 max-w-xs">
-            Premium, locally-curated travel experiences across God&apos;s Own Country. Transparent pricing, local guides, and unforgettable journeys.
+            {t('footer_bio')}
           </p>
           <div className="flex gap-4 pt-2">
             <a href="#" className="p-2 bg-slate-800 rounded-full hover:bg-brand-600 hover:text-white transition-colors" aria-label="Website">
@@ -30,30 +35,30 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h4 className="text-white font-semibold mb-6">Quick Links</h4>
+          <h4 className="text-white font-semibold mb-6">{t('footer_quick_links')}</h4>
           <ul className="space-y-3 text-sm">
-            <li><Link href="/" className="hover:text-brand-400 transition-colors">Home</Link></li>
-            <li><Link href="/about" className="hover:text-brand-400 transition-colors">About Us</Link></li>
-            <li><Link href="/services" className="hover:text-brand-400 transition-colors">Services</Link></li>
-            <li><Link href="/packages" className="hover:text-brand-400 transition-colors">Tour Packages</Link></li>
-            <li><Link href="/contact" className="hover:text-brand-400 transition-colors">Contact Us</Link></li>
+            <li><Link href="/" className="hover:text-brand-400 transition-colors">{t('nav_home')}</Link></li>
+            <li><Link href="/about" className="hover:text-brand-400 transition-colors">{t('nav_about')}</Link></li>
+            <li><Link href="/services" className="hover:text-brand-400 transition-colors">{t('nav_services')}</Link></li>
+            <li><Link href="/packages" className="hover:text-brand-400 transition-colors">{t('nav_packages')}</Link></li>
+            <li><Link href="/contact" className="hover:text-brand-400 transition-colors">{t('nav_contact')}</Link></li>
           </ul>
         </div>
 
         {/* Popular Packages */}
         <div>
-          <h4 className="text-white font-semibold mb-6">Popular Tours</h4>
+          <h4 className="text-white font-semibold mb-6">{t('popular_tours')}</h4>
           <ul className="space-y-3 text-sm">
             <li><Link href="/packages/munnar-hills-retreat" className="hover:text-brand-400 transition-colors">Munnar Hills Retreat</Link></li>
             <li><Link href="/packages/alleppey-backwaters" className="hover:text-brand-400 transition-colors">Alleppey Backwaters</Link></li>
             <li><Link href="/packages/wayanad-wilderness" className="hover:text-brand-400 transition-colors">Wayanad Wilderness</Link></li>
-            <li><Link href="/packages/complete-kerala-circuit" className="hover:text-brand-400 transition-colors">Complete Kerala Circuit</Link></li>
+            <li><Link href="/packages/complete-kerala-circuit" className="hover:text-brand-400 transition-colors">{t('nav_packages')}</Link></li>
           </ul>
         </div>
 
         {/* Contact info */}
         <div>
-          <h4 className="text-white font-semibold mb-6">Reach Out</h4>
+          <h4 className="text-white font-semibold mb-6">{t('footer_reach_out')}</h4>
           <ul className="space-y-4 text-sm">
             <li className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-brand-500 shrink-0" />
@@ -74,7 +79,7 @@ export default function Footer() {
       </div>
       
       <div className="container mx-auto px-6 md:px-12 mt-16 pt-8 border-t border-slate-800 text-sm text-center text-slate-500">
-        &copy; {new Date().getFullYear()} Kerala Mist Holidays. All rights reserved.
+        &copy; {new Date().getFullYear()} Kerala Mist Holidays. {t('copyright')}
       </div>
     </footer>
   );

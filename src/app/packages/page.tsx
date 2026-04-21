@@ -7,13 +7,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { packages } from '@/lib/packages';
 import { cn } from '@/lib/utils';
+import { useTranslation } from '@/lib/i18n';
 
 type DurationFilter = 'all' | 'short' | 'medium' | 'long';
-type BudgetFilter = 'all' | 'budget' | 'mid' | 'premium';
 
 export default function PackagesPage() {
+  const { t, language } = useTranslation();
   const [durationFilter, setDurationFilter] = useState<DurationFilter>('all');
-  const [budgetFilter, setBudgetFilter] = useState<BudgetFilter>('all');
   const [showFilters, setShowFilters] = useState(false);
 
   const filteredPackages = useMemo(() => {
@@ -22,17 +22,11 @@ export default function PackagesPage() {
       if (durationFilter === 'short' && pkg.days > 2) return false;
       if (durationFilter === 'medium' && (pkg.days < 3 || pkg.days > 4)) return false;
       if (durationFilter === 'long' && pkg.days < 5) return false;
-
-      // Budget filter
-      if (budgetFilter === 'budget' && pkg.price > 7000) return false;
-      if (budgetFilter === 'mid' && (pkg.price < 7000 || pkg.price > 15000)) return false;
-      if (budgetFilter === 'premium' && pkg.price < 15000) return false;
-
       return true;
     });
-  }, [durationFilter, budgetFilter]);
+  }, [durationFilter]);
 
-  const hasActiveFilters = durationFilter !== 'all' || budgetFilter !== 'all';
+  const hasActiveFilters = durationFilter !== 'all';
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -68,11 +62,10 @@ export default function PackagesPage() {
             className="max-w-2xl"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 tracking-tight">
-              Our Tour Packages
+              {t('nav_packages')}
             </h1>
             <p className="text-slate-200 text-lg md:text-xl font-medium leading-relaxed">
-              Handpicked experiences across Kerala — from misty hills to serene backwaters.
-              Every package is fully customizable.
+              {t('packages_hero_p')}
             </p>
           </motion.div>
         </div>
@@ -89,7 +82,7 @@ export default function PackagesPage() {
               className="md:hidden flex items-center gap-2 text-slate-700 font-semibold mb-4 bg-white px-4 py-2.5 rounded-xl shadow-sm border border-slate-200"
             >
               <Filter className="w-4 h-4" />
-              Filters
+              {t('packages_filter_duration')}
               {hasActiveFilters && (
                 <span className="w-5 h-5 rounded-full bg-brand-500 text-white text-xs flex items-center justify-center">
                   !
@@ -98,20 +91,20 @@ export default function PackagesPage() {
             </button>
 
             <div className={cn(
-              'flex flex-wrap gap-6 items-start',
+              'flex flex-wrap gap-6 items-end',
               showFilters ? 'block' : 'hidden md:flex'
             )}>
               {/* Duration */}
-              <div>
+              <div className="flex-1 min-w-[200px]">
                 <label className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2 block">
-                  Duration
+                  {t('packages_filter_duration')}
                 </label>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    { value: 'all' as DurationFilter, label: 'All' },
-                    { value: 'short' as DurationFilter, label: '1–2 Days' },
-                    { value: 'medium' as DurationFilter, label: '3–4 Days' },
-                    { value: 'long' as DurationFilter, label: '5+ Days' },
+                    { value: 'all' as DurationFilter, label: t('filter_all') },
+                    { value: 'short' as DurationFilter, label: t('filter_short') },
+                    { value: 'medium' as DurationFilter, label: t('filter_medium') },
+                    { value: 'long' as DurationFilter, label: t('filter_long') },
                   ].map((option) => (
                     <button
                       key={option.value}
@@ -129,45 +122,16 @@ export default function PackagesPage() {
                 </div>
               </div>
 
-              {/* Budget */}
-              <div>
-                <label className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2 block">
-                  Budget
-                </label>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    { value: 'all' as BudgetFilter, label: 'All' },
-                    { value: 'budget' as BudgetFilter, label: 'Under ₹7,000' },
-                    { value: 'mid' as BudgetFilter, label: '₹7K – ₹15K' },
-                    { value: 'premium' as BudgetFilter, label: '₹15K+' },
-                  ].map((option) => (
-                    <button
-                      key={option.value}
-                      onClick={() => setBudgetFilter(option.value)}
-                      className={cn(
-                        'px-4 py-2 rounded-full text-sm font-semibold transition-all',
-                        budgetFilter === option.value
-                          ? 'bg-brand-600 text-white shadow-md'
-                          : 'bg-white text-slate-600 border border-slate-200 hover:border-brand-300 hover:text-brand-600'
-                      )}
-                    >
-                      {option.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
               {/* Clear Filters */}
               {hasActiveFilters && (
                 <button
                   onClick={() => {
                     setDurationFilter('all');
-                    setBudgetFilter('all');
                   }}
-                  className="flex items-center gap-1.5 text-sm font-semibold text-red-500 hover:text-red-600 mt-6 md:mt-auto"
+                  className="flex items-center gap-1.5 text-sm font-semibold text-red-500 hover:text-red-600 mb-2"
                 >
                   <X className="w-4 h-4" />
-                  Clear Filters
+                  {t('filter_clear')}
                 </button>
               )}
             </div>
@@ -175,23 +139,22 @@ export default function PackagesPage() {
 
           {/* Results count */}
           <p className="text-slate-500 text-sm font-medium mb-6">
-            Showing {filteredPackages.length} of {packages.length} packages
+            {t('packages_showing')} {filteredPackages.length} {t('packages_of')} {packages.length} {t('nav_packages')}
           </p>
 
           {/* Package Grid */}
           {filteredPackages.length === 0 ? (
             <div className="text-center py-20">
               <p className="text-slate-500 text-lg font-medium mb-4">
-                No packages match your filters.
+                {t('packages_no_match')}
               </p>
               <button
                 onClick={() => {
                   setDurationFilter('all');
-                  setBudgetFilter('all');
                 }}
                 className="text-brand-600 font-bold hover:underline"
               >
-                Clear all filters
+                {t('packages_clear_all_filters')}
               </button>
             </div>
           ) : (
@@ -200,70 +163,70 @@ export default function PackagesPage() {
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              key={`${durationFilter}-${budgetFilter}`}
+              key={durationFilter}
             >
               {filteredPackages.map((pkg) => (
                 <motion.div
                   key={pkg.slug}
                   variants={cardVariants}
                   whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                  className="group bg-white rounded-[2rem] shadow-[0_4px_20px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgb(0,0,0,0.12)] transition-all duration-500 border border-slate-100 overflow-hidden flex flex-col"
+                  className="group bg-white rounded-[2.5rem] shadow-[0_4px_20px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgb(0,0,0,0.12)] transition-all duration-500 border border-slate-100 overflow-hidden flex flex-col"
                 >
                   {/* Image */}
-                  <div className="relative h-56 overflow-hidden">
+                  <div className="relative h-64 overflow-hidden">
                     <Image
                       src={pkg.image}
-                      alt={pkg.title}
+                      alt={pkg.title[language]}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                     {pkg.tag && (
-                      <div className="absolute top-4 left-4 bg-brand-600/90 backdrop-blur-sm text-white px-4 py-1.5 text-xs font-bold rounded-full uppercase tracking-wider shadow-lg">
-                        {pkg.tag}
+                      <div className="absolute top-5 left-5 bg-brand-600/90 backdrop-blur-sm text-white px-4 py-1.5 text-[10px] font-black rounded-full uppercase tracking-widest shadow-lg">
+                        {pkg.tag[language]}
                       </div>
                     )}
-                    <div className="absolute bottom-4 left-4 flex items-center gap-1.5 text-white text-xs font-bold bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full">
+                    <div className="absolute bottom-5 left-5 flex items-center gap-1.5 text-white text-[10px] font-black uppercase tracking-widest bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full">
                       <Clock className="w-3.5 h-3.5" />
-                      {pkg.duration}
+                      {pkg.duration[language]}
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 flex flex-col flex-1">
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-700 transition-colors">
-                      {pkg.title}
+                  <div className="p-8 flex flex-col flex-1">
+                    <h3 className="text-2xl font-black text-slate-900 mb-4 group-hover:text-brand-700 transition-colors">
+                      {pkg.title[language]}
                     </h3>
 
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {pkg.highlights.slice(0, 3).map((h) => (
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {pkg.highlights[language].slice(0, 3).map((h) => (
                         <span
                           key={h}
-                          className="text-xs font-semibold text-brand-700 bg-brand-50 px-3 py-1 rounded-full border border-brand-100"
+                          className="text-[10px] font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-3 py-1.5 rounded-full border border-brand-100"
                         >
                           {h}
                         </span>
                       ))}
                     </div>
 
-                    <p className="text-slate-500 text-sm leading-relaxed mb-4 line-clamp-2">
-                      {pkg.overview}
+                    <p className="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3">
+                      {pkg.overview[language]}
                     </p>
 
-                    <div className="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <div className="mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
                       <div>
-                        <span className="text-xs text-slate-500 font-medium">Starting from</span>
-                        <p className="text-2xl font-black text-slate-900">
-                          {pkg.priceLabel}
-                          <span className="text-sm font-medium text-slate-500 ml-1">/person</span>
-                        </p>
+                        <span className="block text-slate-400 text-[10px] font-black uppercase tracking-widest mb-1">
+                          {t('contact_price')}
+                        </span>
+                        <span className="text-brand-700 font-black text-lg leading-none">
+                          {t('get_quote')}
+                        </span>
                       </div>
                       <Link
                         href={`/packages/${pkg.slug}`}
-                        className="flex items-center gap-1.5 bg-brand-600 text-white font-bold text-sm px-5 py-2.5 rounded-full hover:bg-brand-700 transition-colors shadow-md group/btn"
+                        className="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center hover:bg-brand-600 transition-colors shadow-lg shadow-slate-900/10 hover:shadow-brand-600/20 group/btn"
                       >
-                        View Details
-                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                       </Link>
                     </div>
                   </div>
