@@ -8,7 +8,7 @@ export const PHONE_LINK = 'tel:+919847006295';
 export const EMAIL = 'keralamist@gmail.com';
 export const WORKING_HOURS = 'Mon – Sat, 9:00 AM – 8:00 PM IST';
 export const ADDRESS = 'Marine Drive, Ernakulam, Kerala 682031';
-export const INSTAGRAM_URL = 'https://instagram.com/keralamist';
+export const INSTAGRAM_URL = 'https://www.instagram.com/keralamist_holidays/';
 
 export function getWhatsAppLink(message?: string): string {
   const base = `https://wa.me/${WHATSAPP_NUMBER}`;
