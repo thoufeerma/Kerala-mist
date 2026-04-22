@@ -1,10 +1,10 @@
-export const WHATSAPP_NUMBER = '919847006295';
+export const WHATSAPP_NUMBER = '919847006294';
 export const PHONE_NUMBERS = [
-  { display: '+91 98470 06295', raw: '+919847006295' },
   { display: '+91 98470 06294', raw: '+919847006294' },
+  { display: '+91 98470 06295', raw: '+919847006295' },
 ];
-export const PHONE_DISPLAY = '+91 98470 06295';
-export const PHONE_LINK = 'tel:+919847006295';
+export const PHONE_DISPLAY = '+91 98470 06294';
+export const PHONE_LINK = 'tel:+919847006294';
 export const EMAIL = 'keralamist@gmail.com';
 export const WORKING_HOURS = 'Mon – Sat, 9:00 AM – 8:00 PM IST';
 export const ADDRESS = 'Marine Drive, Ernakulam, Kerala 682031';

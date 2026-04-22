@@ -98,7 +98,7 @@ export default function ContactPage() {
                       id="contact-phone"
                       required
                       className="w-full px-6 py-4 rounded-2xl border border-slate-100 bg-slate-50 text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-brand-400/50 focus:border-brand-400 outline-none transition-all font-bold"
-                      placeholder="+91 98470 06295"
+                      placeholder="+91 98470 06294"
                     />
                   </div>
                 </div>
