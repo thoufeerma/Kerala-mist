@@ -2,6 +2,7 @@
 
 import { Leaf, Globe, MessageCircle, Camera, MapPin, Phone, Mail } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { PHONE_NUMBERS, EMAIL, ADDRESS, getWhatsAppLink } from '@/lib/constants';
 import { useTranslation } from '@/lib/i18n';
 
@@ -13,9 +14,15 @@ export default function Footer() {
       <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Brand Column */}
         <div className="space-y-4">
-          <Link href="/" className="flex items-center gap-2">
-            <Leaf className="w-6 h-6 text-brand-500" />
-            <span className="font-bold text-xl text-white tracking-tight">Kerala Mist</span>
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="relative w-48 h-16">
+              <Image
+                src="/logo.png"
+                alt="Kerala Mist Logo"
+                fill
+                className="object-contain object-left"
+              />
+            </div>
           </Link>
           <p className="text-sm leading-relaxed text-slate-400 max-w-xs">
             {t('footer_bio')}

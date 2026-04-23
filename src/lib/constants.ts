@@ -7,7 +7,7 @@ export const PHONE_DISPLAY = '+91 98470 06294';
 export const PHONE_LINK = 'tel:+919847006294';
 export const EMAIL = 'keralamist@gmail.com';
 export const WORKING_HOURS = 'Mon – Sat, 9:00 AM – 8:00 PM IST';
-export const ADDRESS = 'Marine Drive, Ernakulam, Kerala 682031';
+export const ADDRESS = '388, Mandapathil Building, Chunkam, Thodupuzha (PO), Kerala 685584';
 export const INSTAGRAM_URL = 'https://www.instagram.com/keralamist_holidays/';
 
 export function getWhatsAppLink(message?: string): string {

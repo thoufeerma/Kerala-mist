@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { getWhatsAppLink } from '@/lib/constants';
 import { useTranslation } from '@/lib/i18n';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
 
@@ -54,11 +55,16 @@ export default function Navbar() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-2 group">
-          <Leaf className="w-8 h-8 text-brand-500 transition-transform group-hover:scale-110" />
-          <span className="font-bold text-xl tracking-tight text-white">
-            Kerala Mist
-          </span>
+        <Link href="/" className="flex items-center gap-2 group py-1">
+          <div className="relative w-40 h-14 transition-transform group-hover:scale-105 duration-300">
+            <Image
+              src="/logo.png"
+              alt="Kerala Mist Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </Link>
 
         {/* Desktop Nav */}

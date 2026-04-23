@@ -74,22 +74,12 @@ export default function LoadingScreen({
       <div className="loader-content">
         {/* Logo */}
         <div className="loader-logo">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="48"
-            height="48"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="loader-logo-icon"
-          >
-            <path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1.5 5.5-5 7-9 10Z" />
-            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
-          </svg>
-          <span className="loader-logo-text">Kerala Mist</span>
+          <img
+            src="/logo.png"
+            alt="Kerala Mist Logo"
+            className="loader-logo-img"
+            style={{ width: '180px', height: 'auto', marginBottom: '1rem' }}
+          />
         </div>
 
         {/* Tagline */}

@@ -6,6 +6,8 @@ import { Send, CheckCircle, Mail, Phone, MapPin } from 'lucide-react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
+import { PHONE_DISPLAY, EMAIL } from '@/lib/constants';
+
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -72,7 +74,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-widest text-slate-400 font-bold">24/7 Priority Line</p>
-                    <p className="text-lg font-black tracking-wide">+91 98765 43210</p>
+                    <p className="text-lg font-black tracking-wide">{PHONE_DISPLAY}</p>
                   </div>
                </div>
                <div className="flex items-center gap-4 text-slate-200 bg-white/5 backdrop-blur-md p-4 rounded-2xl border border-white/10 w-fit">
@@ -81,7 +83,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-widest text-slate-400 font-bold">Direct Email</p>
-                    <p className="text-lg font-black tracking-wide">concierge@keralamist.com</p>
+                    <p className="text-lg font-black tracking-wide">{EMAIL}</p>
                   </div>
                </div>
             </motion.div>
