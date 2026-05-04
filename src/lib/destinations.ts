@@ -45,7 +45,7 @@ export const popularDestinations: PopularDestination[] = [
   },
   {
     name: { en: 'Trivandrum', ml: 'തിരുവനന്തപുരം', hi: 'त्रिवेंद्रम' },
-    image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1695180289266-9dbe35c73a66?q=80&w=2000&auto=format&fit=crop',
     description: {
       en: 'Cultural capital with the world\'s richest temple.',
       ml: 'ലോകത്തിലെ ഏറ്റവും സമ്പന്നമായ ക്ഷേത്രമുള്ള സാംസ്കാരിക തലസ്ഥാനം.',

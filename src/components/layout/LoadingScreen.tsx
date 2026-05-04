@@ -78,7 +78,7 @@ export default function LoadingScreen({
             src="/logo.png"
             alt="Kerala Mist Logo"
             className="loader-logo-img"
-            style={{ width: '180px', height: 'auto', marginBottom: '1rem' }}
+            style={{ width: '240px', height: 'auto', marginBottom: '1rem' }}
           />
         </div>
 

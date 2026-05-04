@@ -56,7 +56,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2 group py-1">
-          <div className="relative w-40 h-14 transition-transform group-hover:scale-105 duration-300">
+          <div className="relative w-48 h-16 lg:w-64 lg:h-20 transition-transform group-hover:scale-105 duration-300">
             <Image
               src="/logo.png"
               alt="Kerala Mist Logo"

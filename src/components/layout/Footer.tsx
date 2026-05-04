@@ -15,7 +15,7 @@ export default function Footer() {
         {/* Brand Column */}
         <div className="space-y-4">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="relative w-48 h-16">
+            <div className="relative w-56 h-20">
               <Image
                 src="/logo.png"
                 alt="Kerala Mist Logo"

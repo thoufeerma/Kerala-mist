@@ -11,8 +11,8 @@ export default function TrivandrumHighlight() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1600&auto=format&fit=crop"
-          alt="Padmanabhaswamy Temple Trivandrum"
+          src="https://images.unsplash.com/photo-1695180289266-9dbe35c73a66?q=80&w=2000&auto=format&fit=crop"
+          alt="Sree Padmanabhaswamy Temple Trivandrum"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-transparent" />
